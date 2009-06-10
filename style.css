@@ -1,0 +1,48 @@
+
+/*
+      Theme Name: Nombre del Theme
+      Theme URI: URL del theme
+      Version: Version del theme
+      Author: Nombre del autor
+      Author URI: URL del autor 
+      
+*/
+
+#page {
+       width:720px;
+       border:3px red solid; }
+#header {
+       height:75px;
+       border: 3px green solid; }
+#sidebar-left {
+       float:left; /* Si queremos el menu a la izquierda basta con usar left para desplazar el menu a la*/
+       width:100px;
+       
+       }
+       
+#sidebar-left .label{
+    background:green;
+    color:#fff;
+    width:100%;
+    }
+       
+#sidebar-left .menu ul{
+    list-style-type:none; 
+    background:red;
+    padding:0px;
+    margin:0px;
+    }
+
+
+#izquierda{
+       width:200px;
+       border: 3px #FFCC00 solid; }
+#content {
+    background:#EFFFEF;
+    border:3px solid #CCFF00;
+    height:90%;
+    width:100%;
+}
+#footer {
+       border: 3px #00CCFF solid; }
+
