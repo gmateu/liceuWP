@@ -9,7 +9,7 @@
 */
 
 #page {
-       width:720px;
+       width:100%;
        border:3px red solid; }
 #header {
        height:75px;
@@ -32,6 +32,10 @@
     padding:0px;
     margin:0px;
     }
+	
+#sidebar-right{
+	float:right;
+	}
 
 
 #izquierda{
