@@ -7,5 +7,16 @@
     </head>
     <body>
         <div id="page">
-            <div id="header">Es Liceu</div>
+            <div id="header">
+				<div class="esquerra">
+					&nbsp;
+				</div>
+				<div class="dreta">
+					<ul>
+						<li><a href="http://wiki.esliceu.com">Wiki</a></li>
+						<li>|</li>
+						<li><a href="/">Pàgina principal </a></li>
+					</ul>
+				</div>
+			</div>
     
