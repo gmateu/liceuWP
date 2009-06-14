@@ -1,24 +1,73 @@
+
+
 <div id="sidebar-left">
-    <div class="menu">
-        <div class="label">Categories</div>
+
+
+    <div id="menu_esq">
+        <h1>Categories</h1>
         <ul>
             <li>opcio 1</li>
             <li>opcio 2</li>
             <li>opcio 3</li>
         </ul>
         
-        <div class="label">Enllaços</div>
+        <h1>Categories</h1>
         <ul>
             <li>opcio 1</li>
             <li>opcio 2</li>
             <li>opcio 3</li>
         </ul>
-        <div class="label">Assignatures</div>
+        <h1>Categories</h1>
         <ul>
             <li>opcio 1</li>
             <li>opcio 2</li>
             <li>opcio 3</li>
-        </ul>                
+        </ul>  
+        <h1>Categories</h1>
+        <ul>
+            <li>opcio 1</li>
+            <li>opcio 2</li>
+            <li>opcio 3</li>
+        </ul>  
+        <h1>Categories</h1>
+        <ul>
+            <li>opcio 1</li>
+            <li>opcio 2</li>
+            <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+        </ul>  	
+        <h1>Categories</h1>
+        <ul>
+            <li>opcio 1</li>
+            <li>opcio 2</li>
+            <li>opcio 3</li>
+        </ul>  	
+        <h1>Categories</h1>
+        <ul>
+            <li>opcio 1</li>
+            <li>opcio 2</li>
+            <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+        </ul>  	
+	<h1>Categories</h1>
+        <ul>
+            <li>opcio 1</li>
+            <li>opcio 2</li>
+            <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+	    <li>opcio 3</li>
+        </ul>  	
     </div>
 
 </div>
