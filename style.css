@@ -27,15 +27,29 @@ font-size:14px;
 margin: 2 2 2 2;
 }
 
-#header .esquerra a{
-	float:left;
-	background:#811836 url(images/logo.png) no-repeat scroll 0 0;
-	height:100%;
-	width:30%;
-	}
-#header .dreta li{
-	float: right;
-	}
+#header {
+	background:#811836;
+}
+
+#containermenu {
+	margin-top: 5px;
+}
+
+
+#clearer {
+	clear: both;
+}
+
+#table_sidebar td {
+	vertical-align: top;
+	padding: 10px;
+}
+
+#table_sidebar td+td {
+	width: 200px;
+	border-left: 1px solid black;
+}
+
 #page {
 /*       left:50%;
 		margin-left:-485px;

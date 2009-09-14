@@ -1,8 +1,12 @@
 <?php get_header(); ?>
-<?php get_sidebar(); ?>
-<?php get_sidebar("right"); ?>        
+<!-- <?php get_sidebar(); ?>
+     <?php get_sidebar("right"); ?>   -->     
 
-            <div id="content">
+<table id="table_sidebar">
+<tr>
+<td>
+
+		<div id="content">
 		<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 
@@ -26,6 +30,12 @@
 	    
 	    
 	    </div>
+</td>
+<td>
+sidebar
+</td>
+</tr>
+</table>
             
 <?php get_footer(); ?>
 
