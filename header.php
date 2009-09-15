@@ -19,7 +19,7 @@
 <div id="containermenu">
 	<div id="myjquerymenu" class="jquerycssmenu"> 
 	<ul>
-			<li> <a href="#">  L'escola  </a>
+			<!--<li> <a href="#">  L'escola  </a>
 				<ul>
 					<li> <a href="#">  Trets d'identitat  </a>   </li>
 					<li> <a href="#">  Per trobar-nos  </a>   </li>
@@ -33,12 +33,20 @@
 					<li> <a href="#">  sub21  </a>   </li>
 					<li> <a href="#">  sub22  </a>   </li>
 				</ul>
-			</li>
+			</li>-->
+
+		 <?php wp_list_pages('title_li=') ?>
+
+
 	</ul>
 	</div>
 </div>
 
 <div id="clearer">
+</div>
+
+<div>
+
 </div>
 
     
