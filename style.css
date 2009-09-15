@@ -17,9 +17,15 @@ ul{
 }
 
 a:link, a:visited, a:active {
-color:black;
-text-decoration:none;
+	color:blue;
+	text-decoration:none;
 }
+
+a:hover {
+	color: red;
+}
+
+
 
 #header a:link, #header span a:visited, #header span a:active, #header li {
 color:white;
@@ -127,79 +133,6 @@ margin: 2 2 2 2;
 
 
 
-
-
-
-
-
-
-
-#sidebar-left {
-       float:left; /* Si queremos el menu a la izquierda basta con usar left para desplazar el menu a la*/
-
-       
-       }
-       
-#sidebar-left .label{
-    background:green;
-    color:#fff;
-    width:100%;
-    }
-       
-#sidebar-left .menu ul{
-    list-style-type:none; 
-    background:red;
-    padding:0px;
-    margin:0px;
-    }
-	
-#sidebar-right{
-	float:right;
-/*	width:175px;*/
-	margin:10px 0;
-	}
-	
-	
-#sidebar-right .capsa2{
-    width: 175px;
-    -x-system-font:none;
-    border:1px solid #811836;
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:12px;
-    font-size-adjust:none;
-    font-stretch:normal;
-    font-style:normal;
-    font-variant:normal;
-    font-weight:normal;
-    line-height:normal;
-    margin:0 0 10px;
-    padding:0 0 5px;
-   }
-#sidebar-right .capsa2 h1 {
-    background:silver none repeat scroll 0 0;
-    border-bottom:1px solid #811836;
-    font-size:12px;
-    margin:0 0 5px;
-    padding:0;
-    text-align:center;
-}
-
-#sidebar-right .capsa2 ul {
-line-height:110%;
-list-style-image:none;
-list-style-position:outside;
-list-style-type:none;
-}
-
-
-#izquierda{
-       width:200px;
-       border: 3px #FFCC00 solid; }
-#content {
-    background:#fff;
-    height:90%;
-    width:100%;
-}
 #footer {
     clear:both;
     -x-system-font:none;

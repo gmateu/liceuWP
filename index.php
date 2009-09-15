@@ -18,6 +18,7 @@
 
 				<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> Categories: <?php the_category(', ') ?> </p>
 			</div>
+			<div id="clearer"></div>
 
 		<?php endwhile; ?>
 		<?php else : ?>
@@ -31,13 +32,13 @@
 </td>
 <td>
 
-<ul id="nav_right">
-<?php if ( !function_exists('dynamic_sidebar')
-        || !dynamic_sidebar() ) : ?>
+	<ul id="nav_right">
+	<?php if ( !function_exists('dynamic_sidebar')
+			|| !dynamic_sidebar() ) : ?>
 
 
-<?php endif; ?>
-</ul>
+	<?php endif; ?>
+	</ul>
 
 
 </td>
