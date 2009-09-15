@@ -57,7 +57,7 @@ margin: 2 2 2 2;
 
 #table_sidebar td+td {
 	width: 200px;
-	border-left: 1px solid black;
+	border-left: 1px solid #DDD;
 }
 
 
@@ -73,7 +73,7 @@ margin: 2 2 2 2;
 }
 
 #nav_right > li {
-  border: 1px solid black;
+  border: 1px solid #BBB;
   margin-bottom: 10px;
   padding: 0px;
 }
@@ -81,8 +81,8 @@ margin: 2 2 2 2;
 #nav_right > li .widgettitle {
   margin: 0px;
   padding: 5px;
-  background: #AAA;
-  border-bottom: 1px solid black;
+  background: #BBB;
+  border-bottom: 1px solid #BBB;
   font-size: 12pt;
 }
 
@@ -113,7 +113,11 @@ margin: 2 2 2 2;
 }
 
 .post {
-	border-bottom: 1px solid gray;
+	
+}
+
+.postseparator {
+	border-bottom: 1px solid #BBB;
 }
 
 .post h2 {

@@ -19,6 +19,7 @@
 				<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> Categories: <?php the_category(', ') ?> </p>
 			</div>
 			<div id="clearer"></div>
+			<div class="postseparator"></div>
 
 		<?php endwhile; ?>
 		<?php else : ?>
