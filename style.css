@@ -40,6 +40,10 @@ margin: 2 2 2 2;
 	clear: both;
 }
 
+#table_sidebar {
+	width: 100%;
+}
+
 #table_sidebar td {
 	vertical-align: top;
 	padding: 10px;
@@ -58,19 +62,29 @@ margin: 2 2 2 2;
 
 #nav_right {
   list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 #nav_right > li {
   border: 1px solid black;
   margin-bottom: 10px;
+  padding: 0px;
+}
+
+#nav_right > li .widgettitle {
+  margin: 0px;
+  padding: 5px;
+  background: #AAA;
+  border-bottom: 1px solid black;
+  font-size: 12pt;
+}
+
+#nav_right > li .textwidget {
+  margin: 0px;
   padding: 5px;
 }
 
-#nav_right > li h2 {
-  margin: 0px;
-  padding: 0px;
-  background: #AAA;
-}
 
 #page {
 /*       left:50%;
