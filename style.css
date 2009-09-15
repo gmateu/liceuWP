@@ -85,6 +85,11 @@ margin: 2 2 2 2;
   padding: 5px;
 }
 
+.alignright {
+	float: right;
+	padding: 5px;
+	}
+
 
 #page {
 /*       left:50%;
@@ -96,6 +101,39 @@ margin: 2 2 2 2;
        height:75px;
 	   background:#811836;
 	   }
+	   
+#header a:active {
+	color: red;
+}
+
+.post {
+	border-bottom: 1px solid gray;
+}
+
+.post h2 {
+	font-size: 16pt;
+}
+
+.widget_categories ul {
+	padding: 5px;
+}
+
+.widget_categories li {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #sidebar-left {
        float:left; /* Si queremos el menu a la izquierda basta con usar left para desplazar el menu a la*/
 
@@ -198,36 +236,3 @@ vertical-align:top;
     width:150px;
     
 }
-
-#menu_esq h1 {
-background:#811836 none repeat scroll 0 0;
-border-left:1px solid #811836;
-border-right:1px solid #811836;
-border-style:solid solid none;
-border-top:1px solid #811836;
-border-width:1px 1px medium;
-color:white;
-font-family:Arial,Helvetica,sans-serif;
-font-size:14px;
-margin:10px 0 0;
-padding:0 5px 1px;
-text-align:left;
-}
-
-#menu_esq ul {
-border:1px solid #811836;
-font-family:Arial,Helvetica,sans-serif;
-font-size:14px;
-line-height:110%;
-list-style-image:none;
-list-style-position:outside;
-list-style-type:none;
-margin:0 0 10px;
-padding:5px 0 5px 5px;
-}
-
-#menu_esq h1 a:link, #menu_esq h1 a:visited, #menu_esq h1 a:active {
-color:white;
-text-decoration:none;
-}
-
