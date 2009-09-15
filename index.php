@@ -33,14 +33,13 @@
 </td>
 <td>
 
-
+<ul id="nav_right">
 <?php if ( !function_exists('dynamic_sidebar')
         || !dynamic_sidebar() ) : ?>
 
-sidebar
 
 <?php endif; ?>
-
+</ul>
 
 
 </td>
