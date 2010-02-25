@@ -4,9 +4,9 @@
 	<title>Es Liceu</title>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	
-	<link rel="stylesheet" type="text/css" href="/wp-content/themes/liceuWP/jquerycssmenu.css" />
-	<script type="text/javascript" src="/wp-content/themes/liceuWP/jquery.js"></script>
-	<script type="text/javascript" src="/wp-content/themes/liceuWP/jquerycssmenu.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/js/jquerycssmenu.css" />
+	<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/jquerycssmenu.js"></script>
 	
 
 
@@ -14,7 +14,7 @@
 <body>
 	<div id="header">
 		<a href="/">
-		<img src="/wp-content/themes/liceuWP/images/logo.png">
+		<img src="<?php bloginfo('template_url') ?>/images/logo.png">
 		</a>
 	</div>
 
