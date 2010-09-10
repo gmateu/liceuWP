@@ -103,37 +103,44 @@ Localització | Contacte
 
 <div id="altres_noticies">
 
+<?php if (have_posts()) : ?>
+<?php while (have_posts()) : the_post(); ?>
 
-<div class="not_ordinaria">
-	<img src="imgs/im3.png">
-	<div class="fright">
-		<div class="cat_i_data"> <b>Formació professional</b> 30/8/2010 </div>
-		<div class="tit"> Final de curs tercer cicle </div>
-		<div class="text"> Els alumnes del cicle formatiu en Informàtica han arribat de Londres. Pitjant aquí en veureu el reportatge.No els ha agradat gens Picadilly.</div>
+	<div class="not_ordinaria">
+	
+		<?php 
+		if ($images = get_children(array(
+			'post_type' => 'attachment',
+			'numberposts' => 1,
+			'post_status' => null,
+			'post_parent' => $post->ID,)))
+
+			foreach($images as $image) {
+				$attachment=wp_get_attachment_image_src($image->ID, $size);
+			}
+		
+		if ($attachment)
+			echo '<img src="' . $attachment[0] . '">';
+		else
+			echo '<img src="imgs/dummy.jpg">';
+		?>
+	
+		<div class="fright">
+			<div class="cat_i_data"> <b>  
+			
+			<?php foreach((get_the_category()) as $category) { 
+				echo $category->cat_name . ' '; 
+			}  ?>  
+			</b> <?php the_time('F jS, Y') ?> </div>
+			<div class="tit"> <?php the_title(); ?> </div>
+			<div class="text"> <?php the_content_rss('', TRUE, '', 30); ?> </div>
+		</div>
 	</div>
-</div>
+	
+	<div class="separator"></div>
 
-<div class="separator"></div>
-
-<div class="not_ordinaria">
-	<img src="imgs/im4.png">
-	<div class="fright">
-		<div class="cat_i_data"> <b>Primària</b> 30/8/2010 </div>
-		<div class="tit"> FESTA FINAL INFANTIL </div>
-		<div class="text"> Aquí teniu una mostra de la petita festa que varen fer els infants d'educació infantil el darrer dia d'escola. Aprofitam per a acomiadar-nos de na Cati i de na Lluc. Molta sort i moltes gràcies per tot!!! I a tots i a totes BON ESTIU!!!!</div>
-	</div>
-</div>
-
-<div class="separator"></div>
-
-<div class="not_ordinaria">
-	<img src="imgs/im5.png">
-	<div class="fright">
-		<div class="cat_i_data"> <b>Primària</b> 30/8/2010 </div>
-		<div class="tit"> Primer concurs de medi ambient d'Es Liceu </div>
-		<div class="text"> Els nins i les nines de les classes de 4 anys A d'Educació Infantil i 3r A d'Educació Primària han guanyat. Aquí vos deixam un petita mostra amb algunes imatges dels guanyadors i de les guanyadores.</div>
-	</div>
-</div>
+<?php endwhile; ?>
+<?php endif; ?>
 
 
 
