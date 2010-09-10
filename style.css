@@ -88,6 +88,13 @@ div#fade1 {
 	height: 15px;
 }
 
+div#static_container {
+	margin-left: 40px;
+	margin-top: 5px;
+	padding-bottom: 10px;
+	font: inherit;
+}
+
 
 table#maintable {
 	margin-left: 40px;

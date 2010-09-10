@@ -1,55 +1,41 @@
-<html>
-
-
-<head>
-
-<base href="/wordpress/wp-content/themes/liceuWP/">
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="StyleSheet" href="style.css" type="text/css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" language="JavaScript" src="scripts.js"></script>
+<?php get_header(); ?>
 
 
 
-</head>
+<?php
 
 
-<body>
+function get_my_categories()
+{
+	foreach((get_the_category()) as $category) { 
+		echo $category->cat_name . ' '; 
+	}
+}
 
-<div id="main_container">
+
+function get_my_thumbnail($post_id)
+{
+	if ($images = get_children(array(
+		'post_type' => 'attachment',
+		'numberposts' => 1,
+		'post_status' => null,
+		'post_parent' => $post_id,)))
+
+		foreach($images as $image) {
+			$attachment=wp_get_attachment_image_src($image->ID, $size);
+		}
+	
+	if ($attachment)
+		echo '<img src="' . $attachment[0] . '">';
+	else
+		echo '<img src="imgs/dummy.jpg">';
+}
 
 
-<div id="head1">
-<img src="imgs/logo_esliceu.png">
-<p>
+?>
 
-<input type="text" value="Cerca">
-<!--<input type="button">-->
 
-Localització | Contacte
-</p>
-</div>
 
-<div id="menu1">
-	<span class="selected"> L'escola </span>
-	<span> Estudis </span>
-	<span> Serveis </span>
-	<span> Notícies </span>
-</div>
-
-<div id="menu2">
-	<span> Presentació </span>
-	<span> Trets d'identitat </span>
-	<span> Història </span>
-	<span> L'edifici </span>
-	<span> Òrgan directiu </span>
-	<span> Contacte </span>
-</div>
-
-<div id="fade1">
-</div>
 
 <table id="maintable">
 
@@ -97,27 +83,12 @@ Localització | Contacte
 		<div class="destacada2">
 		<table><tr>
 				<td>
-				<div class="cat_i_data"> <b>ESO i PQPI</b> 30/8/2010 </div>
+				<div class="cat_i_data"> <b>  <?php get_my_categories(); ?>   </b> 30/8/2010 </div>
 				<div class="tit"> <?php the_title(); ?> </div>
 				</td>
 				<td>
 				
-				<?php 
-				if ($images = get_children(array(
-					'post_type' => 'attachment',
-					'numberposts' => 1,
-					'post_status' => null,
-					'post_parent' => $post->ID,)))
-
-					foreach($images as $image) {
-						$attachment=wp_get_attachment_image_src($image->ID, $size);
-					}
-				
-				if ($attachment)
-					echo '<img src="' . $attachment[0] . '">';
-				else
-					echo '<img src="imgs/dummy.jpg">';
-				?>
+				<?php get_my_thumbnail($post->ID) ?>
 				
 				</td>
 			</tr></table>
@@ -150,29 +121,12 @@ Localització | Contacte
 
 	<div class="not_ordinaria">
 	
-		<?php 
-		if ($images = get_children(array(
-			'post_type' => 'attachment',
-			'numberposts' => 1,
-			'post_status' => null,
-			'post_parent' => $post->ID,)))
-
-			foreach($images as $image) {
-				$attachment=wp_get_attachment_image_src($image->ID, $size);
-			}
-		
-		if ($attachment)
-			echo '<img src="' . $attachment[0] . '">';
-		else
-			echo '<img src="imgs/dummy.jpg">';
-		?>
+		<?php get_my_thumbnail($post->ID) ?>
 	
 		<div class="fright">
 			<div class="cat_i_data"> <b>  
 			
-			<?php foreach((get_the_category()) as $category) { 
-				echo $category->cat_name . ' '; 
-			}  ?>  
+			<?php get_my_categories(); ?>  
 			</b> <?php the_time('F jS, Y') ?> </div>
 			<div class="tit"> <?php the_title(); ?> </div>
 			<div class="text"> <?php the_content_rss('', TRUE, '', 30); ?> </div>
@@ -232,21 +186,5 @@ Localització | Contacte
 
 
 
+<?php get_footer(); ?>
 
-
-</div> <!-- end of div#main_container -->
-
-<div id="footer">
-
-<b> Es Liceu: </b> <i>Carrer Cabana, 31. 07171 Pont d'Inca, Marratxí.</i> <br>
-<b> Telèfon: </b> 971 60 09 86 <b> &nbsp; &nbsp;  Fax: </b> 971 79 48 09 <b> &nbsp; &nbsp;   Correu: </b> escola@esliceu.com
-
-</div>
-
-
-
-</body>
-
-
-
-</html>
