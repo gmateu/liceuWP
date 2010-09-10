@@ -74,30 +74,62 @@ Localització | Contacte
 
 <div id="altres_destacades">
 
-	<div class="destacada2">
-		<table><tr>
-			<td>
-			<div class="cat_i_data"> <b>ESO i PQPI</b> 30/8/2010 </div>
-			<div class="tit"> Es Liceu participa al programa de Seccions Europees </div>
-			</td>
-			<td>
-			<img src="imgs/im1.png">
-			</td>
-		</tr></table>
-		<div class="text"> Escrit dimecres a la nit: Tancam el curs i les activitats Comenius amb la darrera trobada d'aquest curs acadèmic a Klaipeda, Lituània. Partim!!!</div>
-	</div>
+	<?php $first = 0; ?>
+	<?php if (have_posts()) : ?>
+	<?php while (have_posts()) : the_post(); ?>
 	
-	<div class="separator"></div>
-	
-	<div class="destacada2">
+		<?php
+			$ok = False;
+			foreach (get_the_tags() as $tag) {
+				if ($tag->name == 'destacada') $ok = True;
+			}
+			
+			if ($ok == False) continue;
+		?>
+
+		<?php if ($first == 0) 
+			$first=1; 
+		else { 
+			$first = 1; ?>
+			<div class="separator"></div>
+		<?php } ?>
+		
+		<div class="destacada2">
 		<table><tr>
-			<td><div class="cat_i_data"> <b>Infantil</b> 30/8/2010 </div>
-			<div class="tit"> Els polls: informació per pares, mares i mestres </div></td>
-			<td><img src="imgs/im2.png"></td>
-		</tr></table>
-		<div class="text"> De manera preventiva, abans que arribi la primavera, us enviem aquesta informació sobre com prevenir
-		i tractar la presència d'aquestes petites criatures, habitants dels cabells.</div>
-	</div>
+				<td>
+				<div class="cat_i_data"> <b>ESO i PQPI</b> 30/8/2010 </div>
+				<div class="tit"> <?php the_title(); ?> </div>
+				</td>
+				<td>
+				
+				<?php 
+				if ($images = get_children(array(
+					'post_type' => 'attachment',
+					'numberposts' => 1,
+					'post_status' => null,
+					'post_parent' => $post->ID,)))
+
+					foreach($images as $image) {
+						$attachment=wp_get_attachment_image_src($image->ID, $size);
+					}
+				
+				if ($attachment)
+					echo '<img src="' . $attachment[0] . '">';
+				else
+					echo '<img src="imgs/dummy.jpg">';
+				?>
+				
+				</td>
+			</tr></table>
+			<div class="text">  <?php the_content_rss('', TRUE, '', 30); ?>  </div>
+		</div>
+		
+		
+
+
+	<?php endwhile; ?>
+	<?php endif; ?>
+
 
 </div>
 
@@ -105,6 +137,16 @@ Localització | Contacte
 
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
+
+	<?php
+		$ok = True;
+		foreach (get_the_tags() as $tag) {
+			if ($tag->name == 'destacada') $ok = False;
+		}
+		
+		if ($ok == False) continue;
+	?>
+
 
 	<div class="not_ordinaria">
 	
