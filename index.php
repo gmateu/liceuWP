@@ -31,6 +31,15 @@ function get_my_thumbnail($post_id)
 		echo '<img src="imgs/dummy.jpg">';
 }
 
+function is_in_taglist($val)
+{
+	foreach(get_the_tags() as $a) {
+		if ($a->name == $val)
+			return True;
+	}
+	return False;
+}
+
 
 ?>
 
@@ -65,19 +74,14 @@ function get_my_thumbnail($post_id)
 	<?php while (have_posts()) : the_post(); ?>
 	
 		<?php
-			$ok = False;
-			foreach (get_the_tags() as $tag) {
-				if ($tag->name == 'destacada') $ok = True;
-			}
-			
-			if ($ok == False) continue;
+			if (!is_in_taglist('destacada'))
+				continue;
 		?>
 
-		<?php if ($first == 0) 
-			$first=1; 
-		else { 
-			$first = 1; ?>
-			<div class="separator"></div>
+		<?php 
+			if ($first == 0) $first=1; 
+			else { ?>
+				<div class="separator"></div>
 		<?php } ?>
 		
 		<div class="destacada2">
@@ -109,15 +113,10 @@ function get_my_thumbnail($post_id)
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 
-	<?php
-		$ok = True;
-		foreach (get_the_tags() as $tag) {
-			if ($tag->name == 'destacada') $ok = False;
-		}
-		
-		if ($ok == False) continue;
+	<?php	
+		if (is_in_taglist('destacada'))
+			continue;
 	?>
-
 
 	<div class="not_ordinaria">
 	

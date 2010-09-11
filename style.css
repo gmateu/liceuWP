@@ -8,6 +8,14 @@ html, body {
 	font-size: 13px;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 
 
 div#main_container {
@@ -80,6 +88,10 @@ div#menu2 span {
 	padding-left: 10px;
 	border-right: 1px solid white;
 	
+}
+
+div#menu2 span a {
+	color: white;
 }
 
 div#fade1 {

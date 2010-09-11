@@ -1,4 +1,11 @@
+<?php
 
+function get_trets_identitat_url()
+{
+	return get_bloginfo('url') . '/?page_id=24';
+}
+
+?>
 
 
 <html>
@@ -6,8 +13,9 @@
 
 <head>
 
-<base href="/wordpress/wp-content/themes/liceuWP/">
+<title>Es Liceu</title>
 
+<base href="<?php echo get_theme_root_uri() . '/liceuWP/'; ?>">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="StyleSheet" href="style.css" type="text/css"> 
@@ -25,7 +33,7 @@
 
 
 <div id="head1">
-<img src="imgs/logo_esliceu.png">
+<a href="<?php echo get_bloginfo('url'); ?>"><img src="imgs/logo_esliceu.png"></a>
 <p>
 
 <input type="text" value="Cerca">
@@ -44,7 +52,7 @@ Localització | Contacte
 
 <div id="menu2">
 	<span> Presentació </span>
-	<span> Trets d'identitat </span>
+	<span> <a href="<?php echo get_trets_identitat_url(); ?>">Trets d'identitat </a> </span>
 	<span> Història </span>
 	<span> L'edifici </span>
 	<span> Òrgan directiu </span>
