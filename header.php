@@ -1,8 +1,11 @@
 <?php
 
-function get_trets_identitat_url()
+function get_subpages($page_name)
 {
-	return get_bloginfo('url') . '/?page_id=24';
+	$my_wp_query = new WP_Query();
+	$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+	$escola =  get_page_by_title($page_name);
+	return get_page_children($escola->ID, $all_wp_pages);
 }
 
 ?>
@@ -51,12 +54,16 @@ Localització | Contacte
 </div>
 
 <div id="menu2">
-	<span> Presentació </span>
-	<span> <a href="<?php echo get_trets_identitat_url(); ?>">Trets d'identitat </a> </span>
-	<span> Història </span>
-	<span> L'edifici </span>
-	<span> Òrgan directiu </span>
-	<span> Contacte </span>
+
+	<?php
+		$escola_children = get_subpages("L'escola");
+		foreach ($escola_children as $p)
+		{
+			$link = get_permalink($p->ID);
+			echo '<span><a href="' . $link . '">' . $p->post_title . '</a></span>';
+		}
+	?>
+
 </div>
 
 <div id="fade1">

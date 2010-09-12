@@ -31,6 +31,8 @@ div#main_container {
 }
 
 
+
+
 div#head1 p {
 	float: right;
 	padding-top: 20px;
@@ -105,6 +107,16 @@ div#static_container {
 	margin-top: 5px;
 	padding-bottom: 10px;
 	font: inherit;
+}
+
+div#static_container img.alignleft {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+div#static_container h2, div#static_container h3 {
+	color: #a71717;
 }
 
 

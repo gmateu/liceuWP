@@ -40,7 +40,13 @@ function is_in_taglist($val)
 	return False;
 }
 
-
+function get_my_page_by_title($title)
+{
+	$my_wp_query = new WP_Query();
+	$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+	$page =  get_page_by_title($title);
+	return $page;
+}
 ?>
 
 
@@ -51,8 +57,17 @@ function is_in_taglist($val)
 <tr>
 <td id="first_column">
 
-<div id="tit_recorda">Recorda!</div>
-<div id="recorda">Els horaris d'examens de setembre els podeu llegir aquí. Així mateix podeu veure la llista de llibres pel curs vinent a "Administració i serveis".</div>
+
+<?php
+$recorda = get_my_page_by_title('Recorda');
+if ($recorda and $recorda->post_status == 'publish') {
+?>
+
+	<div id="tit_recorda">Recorda!</div>
+	<div id="recorda"> <?php echo $recorda->post_content; ?> </div>
+
+<?php } ?>
+
 
 <div id="tit_noticies" class="titbar">Notícies i actualitat</div>
 <div id="not_destacada">
