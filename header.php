@@ -4,8 +4,8 @@ function get_subpages($page_name)
 {
 	$my_wp_query = new WP_Query();
 	$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
-	$escola =  get_page_by_title($page_name);
-	return get_page_children($escola->ID, $all_wp_pages);
+	$pg =  get_page_by_title($page_name);
+	return get_page_children($pg->ID, $all_wp_pages);
 }
 
 ?>
