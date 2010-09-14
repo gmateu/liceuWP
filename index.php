@@ -104,7 +104,7 @@ if ($recorda and $recorda->post_status == 'publish') {
 		<div class="destacada2">
 		<table><tr>
 				<td>
-				<div class="cat_i_data"> <b>  <?php get_my_categories(); ?>   </b> 30/8/2010 </div>
+				<div class="cat_i_data"> <b>  <?php get_my_categories(); ?>   </b> <?php the_time('F jS, Y') ?> </div>
 				<div class="tit"> <?php the_title(); ?> </div>
 				</td>
 				<td>

@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
-sdfsdf
+Portada d'estudis...
+
 
 <?php get_footer(); ?>
