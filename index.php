@@ -33,6 +33,8 @@ function get_my_thumbnail($post_id)
 
 function is_in_taglist($val)
 {
+	if (!get_the_tags()) return False;
+	
 	foreach(get_the_tags() as $a) {
 		if ($a->name == $val)
 			return True;
