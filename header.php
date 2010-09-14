@@ -65,6 +65,12 @@ Localització | Contacte
 	?>
 
 </div>
+<div id="menu2">
+	<span><a href="">Infantil</a></span>
+	<span><a href="">Primària</a></span>
+	<span><a href="">ESO i PQPI</a></span>
+	<span><a href="">Formació professional</a></span>
+</div>
 
 <div id="fade1">
 </div>
