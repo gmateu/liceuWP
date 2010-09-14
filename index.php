@@ -8,7 +8,7 @@
 function get_my_categories()
 {
 	foreach((get_the_category()) as $category) { 
-		echo $category->cat_name . ' '; 
+		echo $category->cat_name . ' | '; 
 	}
 }
 
