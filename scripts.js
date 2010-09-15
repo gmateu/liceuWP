@@ -1,11 +1,19 @@
 
 
 $(document).ready(function() {
+
 	
 	$("#menu1 span").hover(function() {
-		$(this).addClass("selected");
+		
+			$("div.menu2").hide();
+			$(this).addClass("selected");
+			var id = $(this).attr('id');
+			$("div." + id).toggle();
+
 		}, function() {
-		$(this).removeClass("selected");
+			$(this).removeClass("selected");
+			/*var id = $(this).attr('id');
+			$("div." + id).toggle();*/
 	});
 	
 	

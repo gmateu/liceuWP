@@ -78,22 +78,23 @@ div#menu1 span.selected {
 	color: white;
 }
 
-div#menu2 {
+div.menu2 {
 	color: white;
 	background-color: #a71717;
 	padding-left: 30px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	display: none;
 }
 
-div#menu2 span {
+div.menu2 span {
 	padding-right: 10px;
 	padding-left: 10px;
 	border-right: 1px solid white;
 	
 }
 
-div#menu2 span a {
+div.menu2 span a {
 	color: white;
 }
 
