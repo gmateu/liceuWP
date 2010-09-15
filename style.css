@@ -40,6 +40,10 @@ div#head1 p {
 	color: #494949;
 }
 
+div#head1 img {
+	border: none;
+}
+
 
 
 div#head1 p input[type="text"] {
