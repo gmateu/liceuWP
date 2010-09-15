@@ -2,18 +2,20 @@
 
 $(document).ready(function() {
 
+// 	var dvmenu = $("#menu1").next();
 	
 	$("#menu1 span").hover(function() {
 		
-			$("div.menu2").hide();
+			$("#menu1 span").each(function() { $(this).removeClass("selected"); } );
+		
 			$(this).addClass("selected");
-			var id = $(this).attr('id');
-			$("div." + id).toggle();
+			var dv = $(this).next().clone();
+			$("#menu1").next().detach();
+			$("#menu1").after(dv);
+			dv.show();
 
 		}, function() {
-			$(this).removeClass("selected");
-			/*var id = $(this).attr('id');
-			$("div." + id).toggle();*/
+// 			$(this).removeClass("selected");
 	});
 	
 	

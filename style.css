@@ -94,6 +94,11 @@ div.menu2 span {
 	
 }
 
+div#menu1 + div {
+	display:block;
+}
+
+
 div.menu2 span a {
 	color: white;
 }

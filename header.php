@@ -48,38 +48,53 @@ Localització | Contacte
 </div>
 
 <div id="menu1">
-	<span class="selected" id="op1"> L'escola </span>
-	<span id="op2"> Estudis </span>
-	<span id="op3"> Serveis </span>
-	<span id="op4"> Notícies </span>
+	<span> L'escola </span>
+	
+		<div class="menu2">
+
+		<?php
+			$escola_children = get_subpages("L'escola");
+			foreach ($escola_children as $p)
+			{
+				$link = get_permalink($p->ID);
+				echo '<span><a href="' . $link . '">' . $p->post_title . '</a></span>';
+			}
+		?>
+		
+		</div>
+	
+	<span> Estudis </span>
+	
+		<div class="menu2">
+			<span><a href="">Infantil</a></span>
+			<span><a href="">Primària</a></span>
+			<span><a href="">ESO i PQPI</a></span>
+			<span><a href="">Formació professional</a></span>
+		</div>
+	
+	<span> Serveis </span>
+	
+		<div class="menu2">
+			<span><a href="">Menjador</a></span>
+			<span><a href="">Secretaria</a></span>
+			<span><a href="">Contacte</a></span>
+		</div>
+	
+	
+	<span> Notícies </span>
+
+		<div class="menu2">
+			<span><a href="">Informàtica</a></span>
+			<span><a href="">Blog</a></span>
+			<span><a href="">Miscel·lània</a></span>
+		</div>
+	
+
+
 </div>
 
-<div class="menu2 op1">
-
-	<?php
-		$escola_children = get_subpages("L'escola");
-		foreach ($escola_children as $p)
-		{
-			$link = get_permalink($p->ID);
-			echo '<span><a href="' . $link . '">' . $p->post_title . '</a></span>';
-		}
-	?>
-
-</div>
-<div class="menu2 op2">
-	<span><a href="">Infantil</a></span>
-	<span><a href="">Primària</a></span>
-	<span><a href="">ESO i PQPI</a></span>
-	<span><a href="">Formació professional</a></span>
-</div>
-
-<div class="menu2 op3">
-	<span><a href="">Infantil</a></span>
-	<span><a href="">Primària</a></span>
-</div>
-
-<div class="menu2 op4">
-	<span><a href="">Infantil</a></span>
+<div class="menu2">
+	&nbsp;
 </div>
 
 <div id="fade1">
