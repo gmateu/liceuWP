@@ -76,7 +76,10 @@ Localització | Contacte
 				
 			foreach ($cats as $c)
 			{
-				echo '<span>' . $c->cat_name  . '</span>';
+				$link = get_category_link($c->cat_ID);
+				
+				echo '<span><a href="' . $link . '">' .
+					 $c->cat_name  . '</a></span>';
 			}
 		
 		?>

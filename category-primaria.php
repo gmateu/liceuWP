@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-Portada d'estudis...
+Portada de primària
 
 
 <?php get_footer(); ?>
