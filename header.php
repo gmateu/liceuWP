@@ -66,10 +66,21 @@ Localització | Contacte
 	<span> Estudis </span>
 	
 		<div class="menu2">
-			<span><a href="">Infantil</a></span>
-			<span><a href="">Primària</a></span>
-			<span><a href="">ESO i PQPI</a></span>
-			<span><a href="">Formació professional</a></span>
+		
+		<?php
+			$cats = get_categories(array(
+				'orderby' => 'slug',
+				'order' => 'DESC',
+				'hide_empty' => '0',
+				'child_of' => get_cat_ID('Estudis')));
+				
+			foreach ($cats as $c)
+			{
+				echo '<span>' . $c->cat_name  . '</span>';
+			}
+		
+		?>
+		
 		</div>
 	
 	<span> Serveis </span>
