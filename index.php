@@ -13,7 +13,7 @@ function get_my_categories()
 }
 
 
-function get_my_thumbnail($post_id)
+function get_my_thumbnail($post_id, $size = "")
 {
 	if ($images = get_children(array(
 		'post_type' => 'attachment',
@@ -109,8 +109,10 @@ if ($recorda and $recorda->post_status == 'publish') {
 				</td>
 				<td>
 				
-				<?php get_my_thumbnail($post->ID) ?>
+				<?php get_my_thumbnail($post->ID, array(75,100)) ?>
 				
+				
+
 				</td>
 			</tr></table>
 			<div class="text">  <?php the_content_rss('', TRUE, '', 30); ?>  </div>
