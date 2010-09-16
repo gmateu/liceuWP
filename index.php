@@ -80,6 +80,7 @@ if ($recorda and $recorda->post_status == 'publish') {
 
 
 <div id="tit_noticies" class="titbar">Notícies i actualitat</div>
+
 	<?php $first = 0; ?>
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
@@ -89,7 +90,7 @@ if ($recorda and $recorda->post_status == 'publish') {
 		?>	
 			
 	<div id="not_destacada">
-			<?php get_my_thumbnail($post->ID, 101, 76) ?>
+			<?php get_my_thumbnail($post->ID, 265, 124) ?>
 			<p><?php the_title(); ?></p>
 		
 			<div>
@@ -111,11 +112,12 @@ if ($recorda and $recorda->post_status == 'publish') {
 		?>
 
 
-	<div id="altres_destacades">
+	
 
 		<?php 
-			if ($first == 0) $first=1; 
-			else { ?>
+			if ($first == 0) {$first=1; ?>
+				<div id="altres_destacades">
+		<?php }else { ?>
 				<div class="separator"></div>
 		<?php } ?>
 		
@@ -155,7 +157,7 @@ if ($recorda and $recorda->post_status == 'publish') {
 
 	<div class="not_ordinaria">
 	
-		<?php get_my_thumbnail($post->ID) ?>
+		<?php get_my_thumbnail($post->ID, 101, 75) ?>
 	
 		<div class="fright">
 			<div class="cat_i_data"> <b>  
