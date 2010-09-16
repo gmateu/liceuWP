@@ -5,6 +5,9 @@
 <?php
 
 
+
+
+
 function get_my_categories()
 {
 	foreach((get_the_category()) as $category) { 
@@ -13,20 +16,25 @@ function get_my_categories()
 }
 
 
-function get_my_thumbnail($post_id, $size = "")
+function get_my_thumbnail($post_id, $width= "150", $height = "150")
 {
+	$scriptpath = get_bloginfo('template_directory');
+	
 	if ($images = get_children(array(
 		'post_type' => 'attachment',
 		'numberposts' => 1,
 		'post_status' => null,
 		'post_parent' => $post_id,)))
-
+		
 		foreach($images as $image) {
-			$attachment=wp_get_attachment_image_src($image->ID, $size);
+			
+			$attachment=wp_get_attachment_image_src($image->ID, array(32,32));
+			
 		}
-	
+		
 	if ($attachment)
-		echo '<img src="' . $attachment[0] . '">';
+	
+		echo '<img src="'.$scriptpath.'/timthumb.php?src='. $attachment[0] .'&w='.$width.'&h='.$height.'&zc=1" alt="" />';
 	else
 		echo '<img src="imgs/dummy.jpg">';
 }
@@ -109,10 +117,8 @@ if ($recorda and $recorda->post_status == 'publish') {
 				</td>
 				<td>
 				
-				<?php get_my_thumbnail($post->ID, array(75,100)) ?>
-				
-				
-
+				<?php get_my_thumbnail($post->ID, 101, 76) ?>
+			
 				</td>
 			</tr></table>
 			<div class="text">  <?php the_content_rss('', TRUE, '', 30); ?>  </div>
