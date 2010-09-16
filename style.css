@@ -283,10 +283,12 @@ div.not_ordinaria {
 div.not_ordinaria img {
 	float: left;
 	margin-right: 20px;
+	display: block;
 }
 
 div.not_ordinaria div.fright {
-	display: inline;
+	margin-left: 120px;
+	/*float: left;*/
 }
 
 div.not_ordinaria div.cat_i_data {
