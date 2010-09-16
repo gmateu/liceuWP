@@ -80,28 +80,38 @@ if ($recorda and $recorda->post_status == 'publish') {
 
 
 <div id="tit_noticies" class="titbar">Notícies i actualitat</div>
-<div id="not_destacada">
-	<img src="imgs/imatge_exemple_allots.png">
-	<p>
-	Catàleg d'activitats estiuenques: Grup de biblioteques infantils
-	</p>
-	<div>
-	<span> <b>Primària</b> | 30/8/2010 </span>
-	Recurs que us pot ser d'utilitat si treballeu amb públic infantil. El grup de treball de Biblioteques Infantils i Juvenils ha preparat un document sobre
-	el tema de les activitats de lectura
-	</div>
-</div>
-
-<div id="altres_destacades">
-
 	<?php $first = 0; ?>
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 	
 		<?php
+			if (is_in_taglist('portada')){
+		?>	
+			
+	<div id="not_destacada">
+			<?php get_my_thumbnail($post->ID, 101, 76) ?>
+			<p><?php the_title(); ?></p>
+		
+			<div>
+				<span> <?php get_my_categories(); ?>  | 30/8/2010 </span>
+				<?php the_content_rss('', TRUE, '', 30); ?>
+			</div>
+	</div>
+
+		<?	
+			}
+		?>
+		
+		
+		
+		
+		<?php
 			if (!is_in_taglist('destacada'))
 				continue;
 		?>
+
+
+	<div id="altres_destacades">
 
 		<?php 
 			if ($first == 0) $first=1; 
