@@ -28,7 +28,7 @@ function get_my_thumbnail($post_id, $width= "150", $height = "150")
 		
 		foreach($images as $image) {
 			
-			$attachment=wp_get_attachment_image_src($image->ID, array(32,32));
+			$attachment=wp_get_attachment_image_src($image->ID, 'full');
 			
 		}
 		
@@ -103,21 +103,16 @@ if ($recorda and $recorda->post_status == 'publish') {
 			}
 		?>
 		
-		
-		
-		
+	
 		<?php
 			if (!is_in_taglist('destacada'))
 				continue;
 		?>
 
-
-	
-
 		<?php 
 			if ($first == 0) {$first=1; ?>
 				<div id="altres_destacades">
-		<?php }else { ?>
+		<? }else { ?>
 				<div class="separator"></div>
 		<?php } ?>
 		
